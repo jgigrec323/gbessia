@@ -29,6 +29,7 @@ section.newsletter {
       }
     }
     & .right {
+      position: relative;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -53,6 +54,14 @@ section.newsletter {
       }
       & .btn {
         width: 30rem;
+        &:hover {
+          background-color: $white-color;
+        }
+      }
+      & .confirmationMsg {
+        position: absolute;
+        bottom: -40%;
+        font-weight: $bold-weight;
       }
     }
   }

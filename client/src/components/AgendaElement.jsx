@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from "gsap"
 import { useGSAP } from '@gsap/react'
 function AgendaElement({ jour, mois, titre, lieu, heure }) {
+    gsap.registerPlugin(ScrollTrigger);
 
     const ref = useRef(null)
     // const pushRef = (el) => ref.current.push(el);

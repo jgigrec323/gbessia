@@ -68,7 +68,7 @@ button {
   padding: 0.7rem 2rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease; }
+  transition: color 0.3s ease, background-color 0.3s ease; }
   .btn a {
     display: flex;
     justify-content: space-between;
@@ -158,6 +158,28 @@ button {
     margin-left: 2rem; }
     .navSection .navigationBtns .navIcon:first-child svg {
       transform: rotateY(180deg); }
+
+.slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ecedef;
+  transform-origin: left; }
+
+.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ecedef;
+  transform-origin: right; }
+
+.Toastify__toast-body {
+  font-size: 1.5rem;
+  font-weight: bold; }
 
 nav {
   position: relative;
@@ -273,9 +295,19 @@ section.actu {
         overflow: hidden;
         width: 70rem;
         height: 45rem;
-        border-radius: 1rem; }
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: start; }
         section.actu .wrapper .left .top img {
-          width: 100%; }
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+          transition: all 0.3s ease; }
+        section.actu .wrapper .left .top:hover img {
+          scale: 1.0225;
+          filter: grayscale(0.5); }
       section.actu .wrapper .left .bottom .actuTitle {
         margin-bottom: 1.5rem; }
       section.actu .wrapper .left .bottom .actuText {
@@ -310,7 +342,11 @@ section.actu {
           section.actu .wrapper > .right .singleActu .left img {
             width: 100%;
             height: 100%;
-            object-fit: cover; }
+            object-fit: cover;
+            transition: all 0.3s ease; }
+          section.actu .wrapper > .right .singleActu .left:hover img {
+            scale: 1.0225;
+            filter: grayscale(0.7); }
         section.actu .wrapper > .right .singleActu .right {
           margin-bottom: 1rem; }
           section.actu .wrapper > .right .singleActu .right > button {
@@ -426,7 +462,7 @@ section.contact {
         padding: 1.4rem;
         font-size: 1.8rem; }
         section.contact .inside .left > .contactBtn:hover {
-          border: 3px solid #1a6bbc; }
+          background-color: #fff; }
     section.contact .inside .right {
       text-align: right;
       color: #1a6bbc; }
@@ -518,6 +554,7 @@ section.newsletter {
         font-weight: 800;
         margin-bottom: 2rem; }
     section.newsletter .wrapper .right {
+      position: relative;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -540,6 +577,12 @@ section.newsletter {
           text-transform: uppercase; }
       section.newsletter .wrapper .right .btn {
         width: 30rem; }
+        section.newsletter .wrapper .right .btn:hover {
+          background-color: #fff; }
+      section.newsletter .wrapper .right .confirmationMsg {
+        position: absolute;
+        bottom: -40%;
+        font-weight: 700; }
 
 section.pageInfoSection {
   position: relative;

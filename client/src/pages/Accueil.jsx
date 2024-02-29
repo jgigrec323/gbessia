@@ -7,6 +7,7 @@ import Contact from '../components/Contact'
 import NotreCommune from '../components/NotreCommune'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
+import transition from '../script/transition'
 
 function Accueil() {
     return (
@@ -23,4 +24,4 @@ function Accueil() {
     )
 }
 
-export default Accueil
+export default (Accueil)
