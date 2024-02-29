@@ -1,0 +1,35 @@
+.agendaElement {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto;
+  & .left {
+    color: $main-color;
+    font-weight: 800;
+    & > h2 {
+      font-size: 8rem;
+    }
+    & > p {
+      text-transform: uppercase;
+      width: 13rem;
+    }
+  }
+  & .middle {
+    padding-top: 1rem;
+    color: $main-color;
+    & > h2 {
+      font-weight: 800;
+    }
+    & > p {
+      & > span {
+        margin-right: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+  & .right {
+    padding-top: 1rem;
+    text-align: right;
+    font-weight: 800;
+    color: $main-color;
+  }
+}

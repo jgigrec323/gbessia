@@ -1,0 +1,37 @@
+@keyframes slideIn {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    /* Start from the top */
+  }
+  to {
+    transform: translateY(100%);
+    /* Slide down below the parent */
+  }
+}
+
+@keyframes iconTranslate {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+@keyframes iconTranslateB {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

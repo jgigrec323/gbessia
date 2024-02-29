@@ -1,0 +1,59 @@
+section.pageBody {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 5rem $overall-padding;
+  gap: 5rem;
+  & > .left {
+    flex: 2;
+    & p.text {
+      font-size: 1.5rem;
+      line-height: 3rem;
+      text-align: justify;
+      color: $main-color;
+    }
+    & iframe {
+      width: 100%;
+      height: 60vh;
+      border-radius: 1rem;
+    }
+  }
+  & > .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    & .singleActu {
+      display: flex;
+      align-items: end;
+      gap: 2rem;
+      & .left {
+        overflow: hidden;
+        height: 15rem;
+        width: 100%;
+        border-radius: 0.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      & .right {
+        margin-bottom: 1rem;
+        & > button {
+          margin-top: 2rem;
+          border: none;
+          outline: none;
+          display: flex;
+          gap: 2rem;
+          font-weight: 600;
+          background: transparent;
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

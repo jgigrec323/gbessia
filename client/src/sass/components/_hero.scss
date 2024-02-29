@@ -1,0 +1,74 @@
+main.hero {
+  height: $main-height;
+  padding: 1rem $overall-padding;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7rem;
+  position: relative;
+  & > svg {
+    position: absolute;
+    width: 370px;
+    &.hero1 {
+      left: -13%;
+      bottom: 45px;
+    }
+    &.hero2 {
+      right: -1.5%;
+      bottom: 45px;
+    }
+  }
+  & .top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    & .left {
+      & > h1 {
+        font-size: 7rem;
+        font-weight: 900;
+        color: $main-color;
+        margin-bottom: 2rem;
+        line-height: normal;
+      }
+    }
+    & .right {
+      & img {
+        border-radius: 3rem;
+        transform: translateX(25%);
+      }
+    }
+  }
+  & .bottom {
+    position: relative;
+    background-color: $third-color;
+    border-radius: 15rem;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .quickLinks {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: $main-color;
+      & .quickLink {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        & > .iconSize {
+          width: 32px;
+          height: 32px;
+          & img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

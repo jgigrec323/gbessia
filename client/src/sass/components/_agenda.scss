@@ -1,0 +1,36 @@
+section.agenda {
+  position: relative;
+  height: 90vh;
+  padding: 5rem $overall-padding;
+  font-size: 2rem;
+  & .trace-bleu,
+  .trace-jaune {
+    position: absolute;
+    left: -15%;
+    width: 350px;
+  }
+  & .trace-bleu {
+    top: 22%;
+  }
+  & .trace-jaune {
+    bottom: 15%;
+  }
+  & .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
+    & .agendaLinks {
+      width: 45%;
+      font-size: 2rem;
+      font-weight: 700;
+      color: $main-color;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    & .agendaElements {
+      width: 100%;
+    }
+  }
+}

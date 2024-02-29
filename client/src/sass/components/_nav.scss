@@ -1,0 +1,47 @@
+nav {
+  position: relative;
+  padding: 0 $overall-padding;
+  height: 14rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & .right {
+    position: relative !important;
+    & .navLinks {
+      display: flex;
+      gap: 8rem;
+      & .navLink {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: $main-color;
+        cursor: pointer;
+        & .subLinks {
+          position: absolute;
+          background-color: $main-color;
+          color: $third-color;
+          width: 110%;
+          padding: 2rem;
+          top: 100%;
+          left: -3%;
+          z-index: 999;
+          border-radius: 2px;
+          display: none;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        &:hover .subLinks {
+          display: flex;
+          animation: slideIn 0.3s ease forwards;
+        }
+        &:not(:hover) .subLinks {
+          animation: slideOut 0.3s ease forwards;
+        }
+      }
+    }
+  }
+  & > svg {
+    position: absolute;
+    transform: translate(0, -56%);
+    left: 50%;
+  }
+}

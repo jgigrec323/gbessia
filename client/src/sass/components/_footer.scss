@@ -1,0 +1,59 @@
+footer {
+  position: relative;
+  & .top {
+    position: relative;
+    padding: 2rem $overall-padding;
+    font-size: 2rem;
+    display: flex;
+    gap: 5rem;
+    color: $main-color;
+    & .left {
+      margin-right: 10rem;
+      & > p {
+        margin-top: 2rem;
+        & > span {
+          margin-right: 1rem;
+        }
+      }
+    }
+    & .middle {
+      margin-right: 10rem;
+      & > h2 {
+        font-weight: $extraBold-weight;
+      }
+      & ul {
+        margin-top: 2rem;
+        font-weight: $semiBold-weight;
+        & li {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    & .right {
+      & ul {
+        margin-top: 2rem;
+        display: flex;
+        gap: 2rem;
+        & li {
+          & .iconSize {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+  & .bottom {
+    padding: 1rem $overall-padding;
+    background-color: $main-color;
+    color: $white-color;
+    font-weight: $bold-weight;
+    font-size: 1.2rem;
+  }
+  & > svg {
+    position: absolute;
+    width: 370px;
+    right: -15%;
+    top: 70px;
+  }
+}

@@ -1,0 +1,30 @@
+section.pageInfoSection {
+  position: relative;
+  height: 50vh;
+  padding: 0rem $overall-padding;
+  font-size: 2rem;
+  color: $main-color;
+  & > svg {
+    position: absolute;
+    width: 370px;
+    right: -10%;
+    bottom: 70px;
+  }
+  & .wrapper {
+    position: relative;
+    background-color: $third-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 10px;
+    & > h2 {
+      font-size: 4rem;
+      font-weight: $extraBold-weight;
+    }
+    & > p {
+      font-weight: $medium-weight;
+    }
+  }
+}

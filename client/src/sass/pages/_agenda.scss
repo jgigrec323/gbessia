@@ -1,0 +1,35 @@
+section.agendaBody {
+  padding: 5rem $overall-padding;
+  display: flex;
+  gap: 3rem;
+  & > .left {
+    flex: 2;
+    font-size: 2rem;
+    & .agendaElement {
+      & .left {
+        & > h2 {
+          font-size: 10rem;
+        }
+      }
+    }
+    & .navSection {
+      padding: 0 !important;
+      margin-top: 4rem;
+      flex-direction: row-reverse;
+      & .navigationBtns {
+        justify-self: end;
+      }
+    }
+  }
+  & > .right {
+    & .facebookCard {
+      background-color: $third-color;
+      height: 40%;
+      border-radius: 1rem;
+      margin-bottom: 4rem;
+    }
+    & button {
+      margin-bottom: 3rem;
+    }
+  }
+}
