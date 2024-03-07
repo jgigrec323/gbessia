@@ -43,11 +43,11 @@ function Agenda() {
                             (!isFetching && allEvents.length > 0) ? allEvents.map((event) => (
                                 <React.Fragment key={event.id}>
                                     <AgendaElement
-                                        jour={event.jour}
-                                        mois={event.mois}
+                                        jour={new Date(event.jour).getDate()}
+                                        mois={new Date(event.jour).toLocaleString('default', { month: 'long' })}
                                         titre={event.titre}
                                         lieu={event.lieu}
-                                        heure={event.heure}
+                                        heure={event.heure.split(":").slice(0, 2).join(":")}
                                     />
                                     <div className="separator"></div>
                                 </React.Fragment>

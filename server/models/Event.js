@@ -10,11 +10,7 @@ const Event = sequelize.define(
       autoIncrement: true,
     },
     jour: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    mois: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     titre: {
@@ -26,7 +22,7 @@ const Event = sequelize.define(
       allowNull: false,
     },
     heure: {
-      type: DataTypes.STRING,
+      type: DataTypes.TIME,
       allowNull: false,
     },
   },
