@@ -1,7 +1,7 @@
 section.agendaBody {
   padding: 5rem $overall-padding;
   display: flex;
-  gap: 3rem;
+  gap: 5rem;
   & > .left {
     flex: 2;
     font-size: 2rem;
@@ -22,14 +22,18 @@ section.agendaBody {
     }
   }
   & > .right {
+    width: 25%;
     & .facebookCard {
       background-color: $third-color;
-      height: 40%;
+      height: 45rem;
       border-radius: 1rem;
       margin-bottom: 4rem;
     }
     & button {
       margin-bottom: 3rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

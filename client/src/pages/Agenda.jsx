@@ -1,11 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import PageInfoSection from '../components/PageInfoSection'
 import AgendaElement from '../components/AgendaElement'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
+import { getAllEvents } from '../script/api'
+
+
 
 function Agenda() {
+    const [allEvents, setAllEvents] = useState([])
+    const [isFetching, setIsFetching] = useState(false)
+
+    const fetchDatas = async () => {
+        try {
+            setIsFetching(true)
+            const events = await getAllEvents()
+            setAllEvents(events.data)
+            console.log(events)
+
+        } catch (error) {
+            throw error;
+        }
+        finally {
+            setIsFetching(false)
+        }
+    }
+    useEffect(() => {
+
+        fetchDatas()
+
+    }, [])
     return (
         <>
             <Navbar></Navbar>
@@ -13,21 +38,21 @@ function Agenda() {
             <section className="agendaBody">
                 <div className="left">
                     <div className="agendaElements">
-                        <div className="separator"></div>
-                        <AgendaElement jour={21} mois={"Janvier"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                        <div className="separator"></div>
-                        <AgendaElement jour={24} mois={"Juillet"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                        <div className="separator"></div>
-                        <AgendaElement jour={"03"} mois={"Septembre"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                        <div className="separator"></div>
-                        <AgendaElement jour={21} mois={"Janvier"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                        <div className="separator"></div>
-                        <AgendaElement jour={24} mois={"Juillet"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                        <div className="separator"></div>
-                        <AgendaElement jour={"03"} mois={"Septembre"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                        <div className="separator"></div>
-                        <AgendaElement jour={"03"} mois={"Septembre"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                        <div className="separator"></div>
+                        <div className="separator" ></div>
+                        {
+                            (!isFetching && allEvents.length > 0) ? allEvents.map((event) => (
+                                <React.Fragment key={event.id}>
+                                    <AgendaElement
+                                        jour={event.jour}
+                                        mois={event.mois}
+                                        titre={event.titre}
+                                        lieu={event.lieu}
+                                        heure={event.heure}
+                                    />
+                                    <div className="separator"></div>
+                                </React.Fragment>
+                            )) : "Fetching datas"
+                        }
                     </div>
                     <div className="navSection">
 

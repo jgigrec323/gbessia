@@ -1,11 +1,14 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom'
 import gsap from "gsap"
 import { useGSAP } from '@gsap/react'
 import AgendaElement from './AgendaElement'
+import { getMainEvents } from '../script/api';
 
 function Agenda() {
+    const [mainEvents, setMainEvents] = useState([])
+    const [isFetching, setIsFetching] = useState(false)
     gsap.registerPlugin(ScrollTrigger);
 
     const ref = useRef([])
@@ -32,6 +35,24 @@ function Agenda() {
 
 
     });
+    const fetchDatas = async () => {
+        try {
+            setIsFetching(true)
+            const events = await getMainEvents()
+            setMainEvents(events.data)
+            console.log(events)
+
+        } catch (error) {
+            throw error;
+        }
+        finally {
+            setIsFetching(false)
+        }
+    }
+    useEffect(() => {
+        fetchDatas()
+
+    }, [])
     return (
         <section className="agenda">
             <svg className='trace-bleu' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 387 72.545">
@@ -47,16 +68,26 @@ function Agenda() {
                     <li ref={(el) => pushRef(el)}><Link>Participer à un évènement</Link></li>
                     <li ref={(el) => pushRef(el)}><Link>Promouvoir un évènement</Link></li>
                     <li ref={(el) => pushRef(el)}><Link>S'informer</Link></li>
-                    <li ref={(el) => pushRef(el)}><Link>Voir tous les évènements</Link></li>
+                    <li ref={(el) => pushRef(el)}><Link to={"/agenda"}>Voir tous les évènements</Link></li>
                 </ul>
                 <div className="agendaElements">
                     <div className="separator" ></div>
-                    <AgendaElement jour={21} mois={"Janvier"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                    <div className="separator" ></div>
-                    <AgendaElement jour={24} mois={"Juillet"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                    <div className="separator" ></div>
-                    <AgendaElement jour={"03"} mois={"Septembre"} titre={"Titre ou nom pour l'évènement"} lieu={"Lieu de l'évènement"} heure={"17:00"}></AgendaElement>
-                    <div className="separator" ></div>
+                    {
+                        (!isFetching && mainEvents.length > 0) ? mainEvents.map((event) => (
+                            <React.Fragment key={event.id}>
+                                <AgendaElement
+                                    jour={event.jour}
+                                    mois={event.mois}
+                                    titre={event.titre}
+                                    lieu={event.lieu}
+                                    heure={event.heure}
+                                />
+                                <div className="separator"></div>
+                            </React.Fragment>
+                        )) : "Fetching datas"
+                    }
+
+
                 </div>
             </div>
         </section>

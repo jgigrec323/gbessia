@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import HeroImg from "../assets/images/hero-img.png"
+import HeroImg from "../assets/images/logo.JPG"
 import Demarches from "../assets/images/dossier.png"
 import Rdv from "../assets/images/google-agenda.png"
 import GbessiaTele from "../assets/images/television.png"
@@ -12,12 +12,17 @@ import gsap from "gsap"
 import CSSPlugin from 'gsap/CSSPlugin';
 import { useGSAP } from '@gsap/react'
 import SplitType from 'split-type';
+import Carousel from './Carousel'
+import StatueConakry from "../assets/images/statue-wlc.jpg"
+import Cky1 from "../assets/images/cky.jpg"
+import Cky2 from "../assets/images/cky-2.png"
+
+const images = [Cky1, Cky2, StatueConakry, HeroImg]
 
 function Hero() {
     const textRef = useRef(null);
     const btnRef = useRef(null)
     const imgRef = useRef(null)
-    const imgContainer = useRef(null)
     const ref = useRef([])
     const pushRef = (el) => ref.current.push(el);
 
@@ -65,7 +70,7 @@ function Hero() {
     })
     return (
         <main className='hero'>
-            <svg className='hero1' xmlns="http://www.w3.org/2000/svg" width="410" height="108.818" viewBox="0 0 410 108.818">
+            {/*  <svg className='hero1' xmlns="http://www.w3.org/2000/svg" width="410" height="108.818" viewBox="0 0 410 108.818">
                 <g id="Groupe_30" data-name="Groupe 30" transform="translate(262 -927)">
                     <g id="Groupe_10" data-name="Groupe 10" transform="translate(-212 731.409)">
                         <path id="Tracé_1" data-name="Tracé 1" d="M0,0,244.19-19.545,387,0V53L244.19,31.364,0,53" transform="translate(-27 215.136)" fill="#1a6bbc" />
@@ -80,9 +85,9 @@ function Hero() {
                         <path id="Tracé_2" data-name="Tracé 2" d="M0,0,244.19-19.545,387,0V53L244.19,31.364,0,53" transform="translate(-50 251.409)" fill="#e9b85b" />
                     </g>
                 </g>
-            </svg>
+            </svg> */}
 
-            <div className="top">
+            {/* <div className="top">
                 <div className="left">
                     <h1 ref={textRef}>Gbessia : Bâtissons l'avenir ensemble</h1>
                     <button className="btn mainBtn" ref={btnRef}>
@@ -97,7 +102,13 @@ function Hero() {
                 <div className="right" ref={imgContainer}>
                     <img ref={imgRef} src={HeroImg} alt="" />
                 </div>
+            </div> */}
+            <div className="top">
+                <Carousel images={images}>
+                </Carousel>
             </div>
+
+
             <div className="bottom">
                 <ul className="quickLinks">
 

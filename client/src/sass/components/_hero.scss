@@ -4,7 +4,7 @@ main.hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 7rem;
+  gap: 6rem;
   position: relative;
   & > svg {
     position: absolute;
@@ -18,7 +18,7 @@ main.hero {
       bottom: 45px;
     }
   }
-  & .top {
+  /* & .top {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -34,11 +34,14 @@ main.hero {
       }
     }
     & .right {
+      position: relative;
       & img {
         border-radius: 3rem;
         transform: translateX(25%);
       }
     }
+  } */
+  & .top {
   }
   & .bottom {
     position: relative;
@@ -64,9 +67,13 @@ main.hero {
         & > .iconSize {
           width: 32px;
           height: 32px;
+          transition: transform 0.2s ease;
           & img {
             width: 100%;
           }
+        }
+        &:hover .iconSize {
+          transform: translateY(-7px);
         }
       }
     }

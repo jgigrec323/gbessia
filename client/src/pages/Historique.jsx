@@ -9,7 +9,7 @@ function Historique() {
     return (
         <>
             <Navbar></Navbar>
-            <PageInfoSection title={"Historique"} desc={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, et."}></PageInfoSection>
+            <PageInfoSection title={"Histoire"} desc={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, et."}></PageInfoSection>
             <PageBody>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iusto earum, obcaecati perferendis voluptatem vitae possimus eius vel dolor quis quasi ipsa tempora facilis dolorem, ad nisi? Dolorem, suscipit fuga.
                 Cumque quibusdam impedit molestiae, alias tempora quidem. Aliquam, ratione est temporibus quibusdam maiores aperiam fugit esse repellendus vel odit. Quisquam sapiente praesentium culpa rerum fugiat minima, repellat nam eum ducimus.

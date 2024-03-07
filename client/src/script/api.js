@@ -14,3 +14,19 @@ export const addNewsletterEmail = async (userData) => {
     throw error;
   }
 };
+export const getMainEvents = async () => {
+  try {
+    const response = await axiosInstance.get("/event/main");
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+export const getAllEvents = async () => {
+  try {
+    const response = await axiosInstance.get("/event/all");
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};

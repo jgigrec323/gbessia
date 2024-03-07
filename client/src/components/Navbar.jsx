@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from "gsap"
 import { useGSAP } from '@gsap/react'
+import Logo from '../assets/images/logo.svg'
 function Navbar() {
     // State to manage the visibility of sublinks for each navigation link
     const [showGbessiaSublinks, setShowGbessiaSublinks] = useState(false);
@@ -10,6 +11,7 @@ function Navbar() {
     const [showProjetsSublinks, setShowProjetsSublinks] = useState(false);
     const [showMediaSublinks, setShowMediaSublinks] = useState(false);
 
+    const svgRef = useRef(null)
     const ref = useRef([])
     const pushRef = (el) => ref.current.push(el);
 
@@ -24,12 +26,19 @@ function Navbar() {
                 delay: 0.1 * index
             })
         });
+        gsap.from(svgRef.current, {
+            y: "-70%",
+            duration: .3,
+            stagger: 0.1,
+            ease: "power1.out",
+            delay: 0.1
+        })
     })
 
 
     return (
         <nav>
-            <svg xmlns="http://www.w3.org/2000/svg" width="108.818" height="410" viewBox="0 0 108.818 410">
+            <svg ref={svgRef} xmlns="http://www.w3.org/2000/svg" width="108.818" height="410" viewBox="0 0 108.818 410">
                 <g id="Groupe_29" data-name="Groupe 29" transform="translate(-820 0)">
                     <g id="Groupe_7" data-name="Groupe 7" transform="translate(1124.409 50) rotate(90)">
                         <path id="Tracé_1" data-name="Tracé 1" d="M0,0,244.19-19.545,387,0V53L244.19,31.364,0,53" transform="translate(-27 215.136)" fill="#1a6bbc" />
@@ -40,7 +49,9 @@ function Navbar() {
 
             <div className="left">
                 <div className="logo" ref={(el) => pushRef(el)}>
-                    <Link to={"/"}>Commune de <br />Gbessia</Link>
+                    <Link to={"/"}>
+                        <img src={Logo} alt="Logo" />
+                    </Link>
                 </div>
             </div>
 
@@ -57,13 +68,16 @@ function Navbar() {
                         {showGbessiaSublinks && (
                             <ul className="subLinks">
                                 <li className="subLink">
-                                    <Link to={"/gbessia-histoire"}>Historique</Link>
+                                    <Link to={"/gbessia-histoire"}>Histoire</Link>
                                 </li>
                                 <li className="subLink">
-                                    <Link to={"/demographie"}>Démographie</Link>
+                                    <Link to={"/demographie"}>Peuplement</Link>
                                 </li>
-                                <li className="subLink">
+                                <li className="subLink projetAVenir">
                                     <Link to={"/tourisme"}>Tourisme</Link>
+                                </li>
+                                <li className="subLink">
+                                    <Link to={"/quartiers"}>Quartiers</Link>
                                 </li>
                                 <li className="subLink">
                                     <Link to={"/plan-acces"}>Plan d'accès</Link>
@@ -77,19 +91,17 @@ function Navbar() {
                         onMouseOut={() => setShowLaMairieSublinks(false)}
                         ref={(el) => pushRef(el)}
                     >
-                        La Mairie
+                        En route pour la mairie
                         {showLaMairieSublinks && (
                             <ul className="subLinks">
-                                <li className="subLink">Historique</li>
-                                <li className="subLink">Municipalité</li>
-                                <li className="subLink">Services administratifs</li>
+                                <li className="subLink">Notre candidat</li>
+                                <li className="subLink">Administration</li>
                                 <li className="subLink">Services techniques</li>
-                                <li className="subLink">Le maire</li>
                                 <li className="subLink">Nous écrire</li>
                             </ul>
                         )}
                     </li>
-                    <li
+                    {/* <li
                         className="navLink"
                         onMouseOver={() => setShowServicesSublinks(true)}
                         onMouseOut={() => setShowServicesSublinks(false)}
@@ -104,7 +116,7 @@ function Navbar() {
 
                             </ul>
                         )}
-                    </li>
+                    </li> */}
                     <li
                         className="navLink"
                         onMouseOver={() => setShowProjetsSublinks(true)}
@@ -125,11 +137,14 @@ function Navbar() {
                         onMouseOut={() => setShowMediaSublinks(false)}
                         ref={(el) => pushRef(el)}
                     >
-                        Media
+                        Mediathèque
                         {showMediaSublinks && (
                             <ul className="subLinks">
                                 <li className="subLink">
                                     <Link to={"/actualites"}>Actualités</Link>
+                                </li>
+                                <li className="subLink">
+                                    <Link to={"/success-stories"}>Success Stories</Link>
                                 </li>
                                 <li className="subLink">
                                     <Link to={"/galerie"}>Galerie</Link>

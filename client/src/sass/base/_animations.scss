@@ -35,3 +35,9 @@
     transform: translateX(0);
   }
 }
+
+@keyframes squish {
+  50% {
+    scale: 1.4 0.6;
+  }
+}

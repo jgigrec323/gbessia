@@ -1,10 +1,21 @@
 nav {
   position: relative;
   padding: 0 $overall-padding;
-  height: 14rem;
   display: flex;
+  height: 14rem;
   justify-content: space-between;
   align-items: center;
+  & .left {
+    & .logo {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      & img {
+        width: 100%;
+      }
+    }
+  }
   & .right {
     position: relative !important;
     & .navLinks {
