@@ -47,9 +47,18 @@
   display: inline-block;
   width: 17px;
   height: 17px;
+  display: flex;
+  align-items: center;
   & img {
     width: 100%;
   }
+  & .mdi {
+    font-size: 2rem;
+  }
+}
+
+.lireLaSuiteBtn {
+  color: $secondary-color;
 }
 
 .sectionTitle {
@@ -129,6 +138,11 @@
       &:first-child svg {
         transform: rotateY(180deg);
       }
+      &:nth-child(2) svg {
+        & path#arrow-circle-right {
+          fill: $main-color;
+        }
+      }
     }
   }
 }
@@ -156,4 +170,37 @@
 .Toastify__toast-body {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+#Tracé_1 {
+  fill: $main-color;
+}
+
+#Tracé_2 {
+  fill: $fourth-color;
+}
+
+.projetAVenir {
+  color: $fourth-color !important;
+}
+
+.preloader {
+  background-color: $secondary-color;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: $main-color;
+  & .logo {
+    & img {
+      width: 100%;
+    }
+  }
+  & > p {
+    font-size: 3rem;
+    font-weight: bold;
+  }
 }

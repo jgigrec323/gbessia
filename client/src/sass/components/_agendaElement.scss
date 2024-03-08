@@ -21,6 +21,8 @@
       font-weight: 800;
     }
     & > p {
+      display: flex;
+      align-items: center;
       & > span {
         margin-right: 1rem;
         font-weight: 500;
@@ -28,6 +30,9 @@
     }
   }
   & .right {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     padding-top: 1rem;
     text-align: right;
     font-weight: 800;

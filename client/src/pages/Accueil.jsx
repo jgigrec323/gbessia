@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Actualites from '../components/Actualites'
@@ -8,18 +8,23 @@ import NotreCommune from '../components/NotreCommune'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import transition from '../script/transition'
+import Preloader from '../components/Preloader'
 
 function Accueil() {
+    const [isLoading, setIsLoading] = useState(true);
+
     return (
         <>
-            <Navbar></Navbar>
-            <Hero></Hero>
-            <Actualites></Actualites>
-            <Agenda></Agenda>
-            <Contact></Contact>
-            <NotreCommune></NotreCommune>
-            <Newsletter></Newsletter>
-            <Footer></Footer>
+            {!isLoading ? <>
+                <Navbar />
+                <Hero />
+                <Actualites />
+                <Agenda />
+                <Contact />
+                <NotreCommune />
+                <Newsletter />
+                <Footer />
+            </> : <Preloader setIsLoading={setIsLoading} />}
         </>
     )
 }

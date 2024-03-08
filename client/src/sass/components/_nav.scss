@@ -39,6 +39,13 @@ nav {
           display: none;
           flex-direction: column;
           gap: 0.5rem;
+          overflow: hidden;
+          & img {
+            position: absolute;
+            width: 150px;
+            right: 15px;
+            filter: opacity(0.3);
+          }
         }
         &:hover .subLinks {
           display: flex;

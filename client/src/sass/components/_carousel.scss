@@ -29,17 +29,14 @@
     background-color: $main-color;
     padding: 1rem;
     right: 10%;
-    width: 100px;
-    height: 25px;
+    width: 120px;
+    height: 30px;
     border-end-end-radius: 5px;
     border-end-start-radius: 5px;
-    border-bottom: 2px solid $secondary-color;
-    border-left: 2px solid $secondary-color;
-    border-right: 2px solid $secondary-color;
     & span {
       cursor: pointer;
-      font-size: 2rem;
-      color: $secondary-color;
+      font-size: 3rem;
+      color: $third-color;
       &:hover {
         animation: squish 200ms ease-in-out;
       }

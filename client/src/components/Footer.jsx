@@ -1,12 +1,10 @@
 import React, { useRef } from 'react'
 import Location from "../assets/images/gps.png"
-import Facebook from "../assets/images/facebook.png"
-import Instagram from "../assets/images/instagram.png"
-import Youtube from "../assets/images/youtube.png"
 import { Link } from "react-router-dom"
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from "gsap"
+import Logo from '../assets/images/logo.svg'
 function Footer() {
     gsap.registerPlugin(ScrollTrigger);
     const ref = useRef(null)
@@ -31,11 +29,11 @@ function Footer() {
             <div className="top">
                 <div className="left">
                     <div className="logo">
-                        Commune de <br />Gbessia
+                        <img src={Logo} alt="Logo" />
                     </div>
                     <p>
                         <span className="iconSize">
-                            <img src={Location} alt="" />
+                            <span class="mdi mdi-map-marker"></span>
                         </span>
                         Cité de l'air
                     </p>
@@ -58,19 +56,15 @@ function Footer() {
                     <h2>Sur les réseaux</h2>
                     <ul className="links">
                         <li>
-                            <span className="iconSize">
-                                <img src={Facebook} alt="" />
-                            </span>
+                            <span class="mdi mdi-facebook"></span>
+
                         </li>
                         <li>
-                            <span className="iconSize">
-                                <img src={Instagram} alt="" />
-                            </span>
+                            <span class="mdi mdi-instagram"></span>
+
                         </li>
                         <li>
-                            <span className="iconSize">
-                                <img src={Youtube} alt="" />
-                            </span>
+                            <span class="mdi mdi-youtube"></span>
                         </li>
 
                     </ul>

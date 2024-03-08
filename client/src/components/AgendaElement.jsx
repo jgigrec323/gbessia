@@ -38,14 +38,14 @@ function AgendaElement({ jour, mois, titre, lieu, heure }) {
                 <h2>{titre}</h2>
                 <p>
                     <span className="iconSize">
-                        <img src={Location} alt="" />
+                        <span class="mdi mdi-map-marker"></span>
                     </span>
                     {lieu}
                 </p>
             </div>
             <div className="right">
                 <span className="iconSize">
-                    <img src={Horaires} alt="" />
+                    <span class="mdi mdi-clock-outline"></span>
                 </span>
                 <p>{heure}</p>
             </div>

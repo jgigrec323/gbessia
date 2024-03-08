@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from "gsap"
 import { useGSAP } from '@gsap/react'
 import Logo from '../assets/images/logo.svg'
+import Dec1 from "../assets/images/dec1.svg"
 function Navbar() {
     // State to manage the visibility of sublinks for each navigation link
     const [showGbessiaSublinks, setShowGbessiaSublinks] = useState(false);
@@ -67,6 +68,7 @@ function Navbar() {
                         Gbessia
                         {showGbessiaSublinks && (
                             <ul className="subLinks">
+                                <img src={Dec1} alt="" />
                                 <li className="subLink">
                                     <Link to={"/gbessia-histoire"}>Histoire</Link>
                                 </li>
@@ -94,9 +96,10 @@ function Navbar() {
                         En route pour la mairie
                         {showLaMairieSublinks && (
                             <ul className="subLinks">
+                                <img src={Dec1} alt="" />
                                 <li className="subLink">Notre candidat</li>
-                                <li className="subLink">Administration</li>
-                                <li className="subLink">Services techniques</li>
+                                <li className="subLink projetAVenir">Administration</li>
+                                <li className="subLink projetAVenir">Services techniques</li>
                                 <li className="subLink">Nous écrire</li>
                             </ul>
                         )}
@@ -126,8 +129,9 @@ function Navbar() {
                         Projets
                         {showProjetsSublinks && (
                             <ul className="subLinks">
-                                <li className="subLink">Réalisés</li>
-                                <li className="subLink">En cours</li>
+                                <img src={Dec1} alt="" />
+                                <li className="subLink projetAVenir">Réalisés</li>
+                                <li className="subLink projetAVenir">En cours</li>
                             </ul>
                         )}
                     </li>
@@ -140,16 +144,17 @@ function Navbar() {
                         Mediathèque
                         {showMediaSublinks && (
                             <ul className="subLinks">
-                                <li className="subLink">
+                                <img src={Dec1} alt="" />
+                                <li className="subLink projetAVenir">
                                     <Link to={"/actualites"}>Actualités</Link>
                                 </li>
-                                <li className="subLink">
+                                <li className="subLink projetAVenir">
                                     <Link to={"/success-stories"}>Success Stories</Link>
                                 </li>
-                                <li className="subLink">
+                                <li className="subLink projetAVenir">
                                     <Link to={"/galerie"}>Galerie</Link>
                                 </li>
-                                <li className="subLink">
+                                <li className="subLink projetAVenir">
                                     <Link to={"/gbessiaTele"}>Videos</Link>
                                 </li>
                             </ul>

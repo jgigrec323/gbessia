@@ -68,8 +68,8 @@ main.hero {
           width: 32px;
           height: 32px;
           transition: transform 0.2s ease;
-          & img {
-            width: 100%;
+          & .mdi {
+            font-size: 2.8rem;
           }
         }
         &:hover .iconSize {

@@ -1,12 +1,5 @@
 import React, { useRef } from 'react'
 import HeroImg from "../assets/images/logo.JPG"
-import Demarches from "../assets/images/dossier.png"
-import Rdv from "../assets/images/google-agenda.png"
-import GbessiaTele from "../assets/images/television.png"
-import VousEtes from "../assets/images/groupe-dutilisateurs.png"
-import Horaires from "../assets/images/horloge.png"
-import Emploi from "../assets/images/valise.png"
-import Contact from "../assets/images/telephoner.png"
 import { Link } from 'react-router-dom'
 import gsap from "gsap"
 import CSSPlugin from 'gsap/CSSPlugin';
@@ -16,8 +9,11 @@ import Carousel from './Carousel'
 import StatueConakry from "../assets/images/statue-wlc.jpg"
 import Cky1 from "../assets/images/cky.jpg"
 import Cky2 from "../assets/images/cky-2.png"
+import test1 from "../assets/images/test1.jpg"
+import test2 from "../assets/images/test2.jpg"
+import test3 from "../assets/images/test3.jpg"
 
-const images = [Cky1, Cky2, StatueConakry, HeroImg]
+const images = [Cky1, Cky2, StatueConakry, HeroImg, test1, test2, test3]
 
 function Hero() {
     const textRef = useRef(null);
@@ -115,7 +111,7 @@ function Hero() {
                     <Link to={"/demarches"} ref={(el) => pushRef(el)}>
                         <div className='quickLink'>
                             <span className="iconSize">
-                                <img src={Demarches} alt="" />
+                                <span class="mdi mdi-folder-multiple"></span>
                             </span>
                             <p className="quickLinkText">Demarches</p>
                         </div>
@@ -124,7 +120,7 @@ function Hero() {
                     <Link to={"/rdv"} ref={(el) => pushRef(el)}>
                         <div className='quickLink'>
                             <span className="iconSize">
-                                <img src={Rdv} alt="" />
+                                <span class="mdi mdi-calendar-month"></span>
                             </span>
                             <p className="quickLinkText">Rendez-vous</p>
                         </div>
@@ -133,7 +129,8 @@ function Hero() {
                     <Link to={"/gbessiaTele"} ref={(el) => pushRef(el)}>
                         <div className='quickLink'>
                             <span className="iconSize">
-                                <img src={GbessiaTele} alt="" />
+                                <span class="mdi mdi-television-classic"></span>
+
                             </span>
                             <p className="quickLinkText">Gbessia Télé</p>
                         </div>
@@ -141,7 +138,8 @@ function Hero() {
                     <Link to={"/vous-etes"} ref={(el) => pushRef(el)}>
                         <div className='quickLink'>
                             <span className="iconSize">
-                                <img src={VousEtes} alt="" />
+                                <span class="mdi mdi-account-group"></span>
+
                             </span>
                             <p className="quickLinkText">Vous êtes</p>
                         </div>
@@ -149,7 +147,8 @@ function Hero() {
                     <Link to={"/horaires"} ref={(el) => pushRef(el)}>
                         <div className='quickLink'>
                             <span className="iconSize">
-                                <img src={Horaires} alt="" />
+                                <span class="mdi mdi-clock-outline"></span>
+
                             </span>
                             <p className="quickLinkText">Horaires</p>
                         </div>
@@ -158,7 +157,8 @@ function Hero() {
                     <Link to={"/emploi"} ref={(el) => pushRef(el)}>
                         <div className='quickLink'>
                             <span className="iconSize">
-                                <img src={Emploi} alt="" />
+                                <span class="mdi mdi-briefcase"></span>
+
                             </span>
                             <p className="quickLinkText">Emploi</p>
                         </div>
@@ -167,7 +167,8 @@ function Hero() {
                     <Link to={"/contact"} ref={(el) => pushRef(el)}>
                         <div className='quickLink'>
                             <span className="iconSize">
-                                <img src={Contact} alt="" />
+                                <span class="mdi mdi-phone-classic"></span>
+
                             </span>
                             <p className="quickLinkText">Contact</p>
                         </div>

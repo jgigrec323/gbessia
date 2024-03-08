@@ -13,31 +13,31 @@ function Galerie() {
             <BanniereSection></BanniereSection>
             <section className="galerieImgs">
                 <div className="galerieImg">
-                    <img src={Cky1} alt="" />
+                    <img src={Cky1} loading="lazy" alt="" />
                 </div>
                 <div className="galerieImg">
-                    <img src={Cky1} alt="" />
+                    <img src={Cky1} loading="lazy" alt="" />
                 </div>
                 <div className="galerieImg">
-                    <img src={Cky1} alt="" />
+                    <img src={Cky1} loading="lazy" alt="" />
                 </div>
                 <div className="galerieImg">
-                    <img src={Cky1} alt="" />
+                    <img src={Cky1} loading="lazy" alt="" />
                 </div>
                 <div className="galerieImg">
-                    <img src={Cky1} alt="" />
+                    <img src={Cky1} loading="lazy" alt="" />
                 </div>
                 <div className="galerieImg">
-                    <img src={Cky1} alt="" />
+                    <img src={Cky1} loading="lazy" alt="" />
                 </div>
                 <div className="galerieImg">
-                    <img src={Cky1} alt="" />
+                    <img src={Cky1} loading="lazy" alt="" />
                 </div>
                 <div className="galerieImg">
-                    <img src={Cky1} alt="" />
+                    <img src={Cky1} loading="lazy" alt="" />
                 </div>
                 <div className="galerieImg">
-                    <img src={Cky1} alt="" />
+                    <img src={Cky1} loading="lazy" alt="" />
                 </div>
             </section>
             <div className="navSection">
